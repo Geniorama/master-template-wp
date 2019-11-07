@@ -282,27 +282,24 @@
     Redux::setSection( $opt_name, array(
         'title'            => __( 'Header', 'master-template' ),
         'id'               => 'opt-header',
-        'desc'             => __( 'These are really basic fields!', 'master-template' ),
         'customizer_width' => '400px',
         'icon'             => 'el el-edit'
     ) );
 
     //Custom Logo
     Redux::setSection( $opt_name, array(
-        'title'            => __( 'Custom Logo', 'master-template' ),
+        'title'            => __( 'Logo personalizado', 'master-template' ),
         'id'               => 'logo-header',
         'subsection'       => true,
         'customizer_width' => '450px',
-        'desc'             => __( 'Options custom logo', 'master-template' ),
         'fields'           => array(
             array(
                 'id'       => 'img-logo-dark',
                 'type'     => 'media', 
                 'url'      => true,
-                'title'    => __('Logo Dark', 'master-template'),
-                'desc'     => __('Logo image', 'master-template'),
-                'subtitle' => __('Upload your logo', 'master-template'),
-                'desc'     => __('Width: 300px, heigth: 300px', 'master-template'),
+                'title'    => __('Logo Oscuro', 'master-template'),
+                'desc'     => __('Imagen del logo en versión oscura', 'master-template'),
+                'desc'     => __('Medidas sugeridas Ancho: 300px, Alto: 300px', 'master-template'),
                 'default'  => array(
                     'url'=>'http://s.wordpress.org/style/images/codeispoetry.png'
                 ),
@@ -312,9 +309,8 @@
                 'id'       => 'img-logo-light',
                 'type'     => 'media', 
                 'url'      => true,
-                'title'    => __('Logo Light', 'master-template'),
-                'desc'     => __('Logo image', 'master-template'),
-                'subtitle' => __('Upload your logo', 'master-template'),
+                'title'    => __('Logo Claro', 'master-template'),
+                'desc'     => __('Imagen del logo en versión clara', 'master-template'),
                 'desc'     => __('Width: 300px, heigth: 300px', 'master-template'),
                 'default'  => array(
                     'url'=>'http://s.wordpress.org/style/images/codeispoetry.png'
@@ -325,44 +321,45 @@
 
     //Top Header
     Redux::setSection( $opt_name, array(
-        'title'            => __( 'Top Header', 'master-template' ),
+        'title'            => __( 'Encabezado superior', 'master-template' ),
         'id'               => 'top-header',
         'subsection'       => true,
         'customizer_width' => '450px',
-        'desc'             => __( 'Options Top Header', 'master-template' ),
         'fields'           => array(
             array(
                 'id'       => 'header-top-on-off',
                 'type'     => 'switch',
-                'title'    => __( 'Enable Top Header', 'master-template' ),
-                'subtitle' => __( 'Enable or disable Top Header', 'master-template' ),
-                'desc'     => __( 'This is the description field, again good for additional info.', 'master-template' ),
+                'title'    => __( 'Mostrar / Ocultar', 'master-template' ),
+                'subtitle' => __( 'Muestre u oculte el encabezado superior', 'master-template' ),
+                'on'        => 'Mostrar',
+                'off'       => 'Ocultar',
                 'default'  => true
             ),
 
             array(
                 'id'       => 'header-top-full-w-on-off',
                 'type'     => 'switch',
-                'title'    => __( 'Full Width', 'master-template' ),
-                'subtitle' => __( 'Enable or disable Full Width for Top Header', 'master-template' ),
-                'desc'     => __( 'This is the description field, again good for additional info.', 'master-template' ),
+                'title'    => __( 'Ancho completo', 'master-template' ),
+                'subtitle' => __( 'Muestre el encabezado de ancho completo o dentro de un contenedor', 'master-template' ),
                 'default'  => '2',
+                'on'        => 'Ancho completo',
+                'off'       => 'Contenedor',
                 'required'  => array( 'header-top-on-off', '=', '1' ),
             ),
 
             array(
                 'id'        => 'top-header-icons',
-                'title'     => __('Icons', 'master-template'),
+                'title'     => __('Iconos', 'master-template'),
                 'type'      => 'section',
-                'subtitle'  => __('Use the class of FontAwesome 5', 'master-template'),
+                'subtitle'  => __('Use las clases de Fontawesome 5', 'master-template'),
                 'indent'    => true,
                 'required'  => array( 'header-top-on-off', '=', '1' ),
             ),
 
             array(
                 'id'        => 'icon-mail',
-                'title'     => __('Icon Mail', 'master-template'),
-                'desc'      => __('Example Class "far fa-envelope"'),
+                'title'     => __('Icono correo', 'master-template'),
+                'desc'      => __('Ejemplo: "far fa-envelope"'),
                 'type'      => 'text',
                 'default'   => 'far fa-envelope',
                 'required'  => array( 'header-top-on-off', '=', '1' ),
@@ -370,8 +367,8 @@
 
             array(
                 'id'        => 'icon-phone',
-                'title'     => __('Icon phone', 'master-template'),
-                'desc'      => __('Example Class "fas fa-phone"'),
+                'title'     => __('Icono teléfono', 'master-template'),
+                'desc'      => __('Ejemplo: "fas fa-phone"'),
                 'type'      => 'text',
                 'default'   => 'fas fa-phone',
                 'required'  => array( 'header-top-on-off', '=', '1' ),
@@ -379,8 +376,8 @@
 
             array(
                 'id'        => 'icon-address',
-                'title'     => __('Icon Address', 'master-template'),
-                'desc'      => __('Example Class "fas fa-map-marker-alt"'),
+                'title'     => __('Icono Dirección', 'master-template'),
+                'desc'      => __('Ejemplo: "fas fa-map-marker-alt"'),
                 'type'      => 'text',
                 'default'   => 'fas fa-map-marker-alt',
                 'required'  => array( 'header-top-on-off', '=', '1' ),
@@ -389,7 +386,7 @@
             array(
                 'id'      => 'section-search-start',
                 'type'    => 'section',
-                'title'   => __('Search Bar Options', 'master-template'),
+                'title'   => __('Barra de búsqueda', 'master-template'),
                 'indent' => true,
                 'required'  => array( 'header-top-on-off', '=', '1' ),
             ),
@@ -397,8 +394,8 @@
             array(
                 'id'       => 'search-on-off',
                 'type'     => 'switch',
-                'title'    => __( 'Enable Box Search', 'master-template' ),
-                'subtitle'    => __( 'Enable or disabled box search', 'master-template' ),
+                'title'    => __( 'Mostrar / Ocultar', 'master-template' ),
+                'subtitle'    => __( 'Muestre u oculte la barra de búsqueda en el encabezado superior', 'master-template' ),
                 'default'  => '1',
                 'required'  => array( 'header-top-on-off', '=', '1' ),
             ),
@@ -406,8 +403,7 @@
             array(
                 'id'       => 'search-text',
                 'type'     => 'text',
-                'title'    => __( 'Placeholder Search Text', 'master-template' ),
-                'subtitle'    => __( 'Type your placeholder text', 'master-template' ),
+                'title'    => __( 'Texto placeholder', 'master-template' ),
                 'default'  => 'Buscar',
                 'required'  => array('search-on-off', '=', '1' ),
 
@@ -416,7 +412,7 @@
              //Color Top Header
              array(
                 'id'        => 'section-color-top-header',
-                'title'     => 'Color Top Header',
+                'title'     => 'Colores encabezado superior',
                 'type'      => 'section',
                 'indent'    => true,
                 'required'  => array( 'header-top-on-off', '=', '1' ),
@@ -425,8 +421,7 @@
             array(
                 'id'          => 'opt-header-top-bg',
                 'type'        => 'color', 
-                'title'       => __('Color background', 'master-template'),
-                'subtitle'       => __('Choose the color for background header top', 'master-template'),
+                'title'       => __('Color Fondo', 'master-template'),
                 'output'      => array(
                     'background' => '.top-header',
                 ),
@@ -437,8 +432,7 @@
             array(
                 'id'          => 'opt-header-top-text',
                 'type'        => 'color', 
-                'title'       => __('Color text', 'master-template'),
-                'subtitle'       => __('Choose the color for text header top', 'master-template'),
+                'title'       => __('Color texto', 'master-template'),
                 'output'      => array(
                     'color' => '.top-header p',
                 ),
@@ -449,8 +443,7 @@
             array(
                 'id'          => 'opt-header-top-link',
                 'type'        => 'link_color', 
-                'title'       => __('Color text link', 'master-template'),
-                'subtitle'       => __('Choose the color for text link header top', 'master-template'),
+                'title'       => __('Color texto enlaces', 'master-template'),
                 'output'      => array(
                     'color' => '.top-header a',
                 ),
@@ -468,44 +461,45 @@
 
     //Bottom Header
     Redux::setSection( $opt_name, array(
-        'title'            => __( 'Bottom Header', 'master-template' ),
+        'title'            => __( 'Encabezado principal', 'master-template' ),
         'id'               => 'bottom-header',
         'subsection'       => true,
         'customizer_width' => '450px',
-        'desc'             => __( 'Enable or disable Bottom Header', 'master-template' ),
         'fields'           => array(
             array(
                 'id'       => 'header-bottom-on-off',
                 'type'     => 'switch',
-                'title'    => __( 'Enable Bottom Header', 'master-template' ),
+                'title'    => __( 'Mostrar / Ocultar', 'master-template' ),
+                'subtitle' => __('Muestra u oculta el menú principal'),
+                'on'        => 'Mostrar',
+                'off'       => 'Ocultar',
                 'default'  => '1'
             ),
 
             array(
                 'id'       => 'header-bottom-full-w-on-off',
                 'type'     => 'switch',
-                'title'    => __( 'Full Width', 'master-template' ),
-                'subtitle' => __( 'Enable or disable Full Width for Bottom Header', 'master-template' ),
-                'desc'     => __( 'This is the description field, again good for additional info.', 'master-template' ),
+                'title'    => __( 'Ancho completo', 'master-template' ),
+                'subtitle' => __( 'Muestra el menú principal en ancho completo o dentro de un contenedor', 'master-template' ),
                 'default'  => '1',
+                'on'        => 'Ancho completo',
+                'off'       => 'Contenedor',
                 'required'  => array( 'header-bottom-on-off', '=', '1' ),
             ),
 
             array(
                 'id'        => 'sticky_header',
                 'type'      => 'switch',
-                'title'     => esc_html__('Sticky Header', 'master-template'),
+                'title'     => esc_html__('Encabezado fijo', 'master-template'),
+                'subtitle'  => __('Tu encabezado se mantiene fijo en la parte superior de la página', 'master-template'),
                 'default'   => 0,
-                'on'        => 'On',
-                'off'       => 'Off',
                 'required'  => array( 'header-bottom-on-off', '=', '1' ),
             ),
 
             array(
                 'id'       => 'header-bottom-style',
                 'type'     => 'image_select',
-                'title'    => __( 'Header Bottom Style', 'master-template' ),
-                'subtitle' => __( 'Choose the style of the Bottom Header', 'master-template' ),
+                'title'    => __( 'Estilo encabezado', 'master-template' ),
                 'options'  => array(
                     '1'       => array(
                         'alt' => 'Left Logo',
@@ -537,67 +531,27 @@
             array(
                 'id'          => 'section-static-header',
                 'type'        => 'section', 
-                'title'       => __('Options Static Header', 'master-template'),
-                'subtitle'    => __('Select the options for static header', 'master-template'),
+                'title'       => __('Opciones encabezado estático', 'master-template'),
                 'indent'      => true,
             ),
 
             array(
                 'id'       => 'opt-logo-select',
                 'type'     => 'select',
-                'title'    => __('Select Logo', 'master-template'), 
-                'subtitle' => __('No validation can be done on this field type', 'master-template'),
-                'desc'     => __('This is the description field, again good for additional info.', 'master-template'),
+                'title'    => __('Selecciona un tipo de logo', 'master-template'),
                 // Must provide key => value pairs for select options
                 'options'  => array(
-                    '1' => 'Logo Dark',
-                    '2' => 'Logo Light'
+                    '1' => 'Logo Oscuro',
+                    '2' => 'Logo Claro'
                 ),
                 'default'  => '1',
                 'required'  => array( 'header-bottom-on-off', '=', '1' ),
             ),
 
-
-            //Sticky Header
-            array(
-                'id'          => 'section-sticky-header',
-                'type'        => 'section', 
-                'title'       => __('Options Sticky Header', 'master-template'),
-                'subtitle'    => __('Select the options for sticky header', 'master-template'),
-                'indent'      => true,
-                'required'  => array( 'sticky_header', '=', '1' ),
-            ),
-
-
-            array(
-                'id'       => 'opt-logo-sticky-select',
-                'type'     => 'select',
-                'title'    => __('Select Logo', 'master-template'), 
-                'subtitle' => __('No validation can be done on this field type', 'master-template'),
-                'desc'     => __('This is the description field, again good for additional info.', 'master-template'),
-                // Must provide key => value pairs for select options
-                'options'  => array(
-                    '1' => 'Logo Dark',
-                    '2' => 'Logo Light'
-                ),
-                'default'  => '1',
-                'required'  => array( 'sticky_header', '=', '1' ),
-            ),
-
-
-            //Color Static Header
-            array(
-                'id'        => 'section-color-static-header',
-                'title'     => 'Color Static Header',
-                'type'      => 'section',
-                'indent'    => true
-            ),
-
             array(
                 'id'          => 'opt-header-bg',
                 'type'        => 'color_rgba', 
-                'title'       => __('Color background', 'master-template'),
-                'subtitle'       => __('Choose the color for background header bottom', 'master-template'),
+                'title'       => __('Color fondo', 'master-template'),
                 'output'      => array(
                     'background-color' => '.bottom-header',
                 ),
@@ -608,8 +562,7 @@
             array(
                 'id'          => 'opt-nav-color',
                 'type'        => 'link_color', 
-                'title'       => __('Menu links', 'master-template'),
-                'subtitle'    => __('Choose the color for menu navigation links', 'master-template'),
+                'title'       => __('Color enlaces menú', 'master-template'),
                 'output'      => '.static-header .nav-link',
                 'default'  => array(
                     'regular'  => '#252525',
@@ -620,21 +573,33 @@
             ),
 
 
-            //Color Sticky Header
+            //Sticky Header
             array(
-                'id'        => 'section-color-sticky-header',
-                'title'     => 'Color Sticky Header',
-                'type'      => 'section',
-                'indent'    => true,
-                'required'    => array( 'sticky_header', '=', '1' ),
+                'id'          => 'section-sticky-header',
+                'type'        => 'section', 
+                'title'       => __('Opciones encabezado fijo', 'master-template'),
+                'indent'      => true,
+                'required'  => array( 'sticky_header', '=', '1' ),
             ),
 
-            
+
+            array(
+                'id'       => 'opt-logo-sticky-select',
+                'type'     => 'select',
+                'title'    => __('Selecciona un tipo de logo', 'master-template'),
+                // Must provide key => value pairs for select options
+                'options'  => array(
+                    '1' => 'Logo Oscuro',
+                    '2' => 'Logo Claro'
+                ),
+                'default'  => '1',
+                'required'  => array( 'sticky_header', '=', '1' ),
+            ),
+
             array(
                 'id'          => 'opt-header-sticky-bg',
                 'type'        => 'color_rgba', 
-                'title'       => __('Color background', 'master-template'),
-                'subtitle'    => __('Choose the color for background sticky header', 'master-template'),
+                'title'       => __('Color fondo', 'master-template'),
                 'output'      => array(
                     'background-color' => '.sticky-header'),
                 'required'    => array( 'sticky_header', '=', '1' ),
@@ -643,8 +608,7 @@
             array(
                 'id'          => 'opt-nav-sticky-color',
                 'type'        => 'link_color', 
-                'title'       => __('Menu links', 'master-template'),
-                'subtitle'       => __('Choose the color for sticky menu navigation links', 'master-template'),
+                'title'       => __('Color enlaces menú', 'master-template'),
                 'output'      => '.sticky-header .nav-link',
                 'default'  => array(
                     'regular'  => '#fff',
@@ -655,20 +619,21 @@
                 'required'  => array( 'sticky_header', '=', '1' ),
             ),
 
+
             //Color Menu Lateral
 
             array(
                 'id'        => 'style-color-menu-lateral',
-                'title'     => __('Color Menu Lateral','master-template'),
+                'title'     => __('Color Menú Lateral','master-template'),
                 'type'      => 'section',
-                'indent'    => true
+                'indent'    => true,
+                'required'    => array( 'header-bottom-style', '=', '4' ),
             ),
 
             array(
                 'id'          => 'bg-menu-lateral',
                 'type'        => 'color_rgba', 
-                'title'       => __('Color background', 'master-template'),
-                'subtitle'    => __('Choose the color for background menu lateral', 'master-template'),
+                'title'       => __('Color fondo', 'master-template'),
                 'output'      => array(
                     'background-color' => '.menu-toggle-container'),
                 'required'    => array( 'header-bottom-style', '=', '4' ),
@@ -677,8 +642,7 @@
             array(
                 'id'          => 'color-text-menu-lateral',
                 'type'        => 'link_color', 
-                'title'       => __('Menu links', 'master-template'),
-                'subtitle'       => __('Choose the color for sticky menu navigation links', 'master-template'),
+                'title'       => __('Color enlaces menú', 'master-template'),
                 'output'      => '.menu-toggle-container .nav-link',
                 'default'  => array(
                     'regular'  => '#303030',
@@ -695,14 +659,13 @@
     Redux::setSection( $opt_name, array(
         'title'            => __( 'Body', 'master-template' ),
         'id'               => 'opt-body',
-        'desc'             => __( 'These are really basic fields!', 'master-template' ),
         'customizer_width' => '400px',
         'icon'             => 'el el-photo'
     ) );
 
     //Buttons
     Redux::setSection( $opt_name, array(
-        'title'            => __( 'Buttons', 'master-template' ),
+        'title'            => __( 'Botones', 'master-template' ),
         'id'               => 'opt-style-buttons',
         'subsection'       => true,
         'customizer_width' => '450px',
@@ -710,19 +673,20 @@
             array(
                 'id'          => 'section-style-master-buttons',
                 'type'        => 'section', 
-                'title'       => __('Options Button Master', 'master-template'),
+                'title'       => __('Opciones "Button Master"', 'master-template'),
+                'subtitle'    => __('Se aplica a los botones generados por el tema', 'master-template'),
                 'indent'     => true
             ),
 
             array(
                 'id'       => 'select-button-type',
                 'type'     => 'select',
-                'title'    => __('Select Type Button', 'master-template'),
+                'title'    => __('Selecciona el tipo de botones que usarás', 'master-template'),
                 // Must provide key => value pairs for select options
                 'options'  => array(
-                    '1' => 'Button Rounded',
-                    '2' => 'Button Half Round',
-                    '3' => 'Button Squared',
+                    '1' => 'Redondo',
+                    '2' => 'Esquinas redondeadas',
+                    '3' => 'Recto',
                 ),
                 'default'  => '1'
             ),
@@ -730,7 +694,7 @@
             array(
                 'id'          => 'section-opt-button-toggle',
                 'type'        => 'section', 
-                'title'       => __('Options Button Toggle', 'master-template'),
+                'title'       => __('Opciones botón menú', 'master-template'),
                 'indent'     => true,
                 'required'    => array('header-bottom-style','=','4')
 
@@ -739,10 +703,10 @@
             array(
                 'id'       => 'style-color-button-toggle',
                 'type'     => 'select',
-                'title'    => __('Select color style for your button toggle', 'master-template'),
+                'title'    => __('Selecciona el estilo para el botón del menú', 'master-template'),
                 'options'  => array(
                     '1' => 'Principal',
-                    '2' => 'Secondary'
+                    '2' => 'Secundario'
                 ),
                 'default'  => '1',
                 'required'    => array('header-bottom-style','=','4')
@@ -751,11 +715,11 @@
             array(
                 'id'       => 'size-button-toggle',
                 'type'     => 'select',
-                'title'    => __('Size button toggle', 'master-template'),
+                'title'    => __('Tamaño botón de menú', 'master-template'),
                 'options'  => array(
                     '1' => 'Normal',
-                    '2' => 'Large',
-                    '3' => 'Small'
+                    '2' => 'Largo',
+                    '3' => 'Pequeño'
                 ),
                 'default'  => '1',
                 'required'    => array('header-bottom-style','=','4')
@@ -764,26 +728,27 @@
             array(
                 'id'          => 'section-opt-float-buttons',
                 'type'        => 'section', 
-                'title'       => __('Options Float Buttons', 'master-template'),
+                'title'       => __('Opciones botones flotantes', 'master-template'),
                 'indent'     => true
             ),
 
             array(
                 'id'          => 'active-buttons',
                 'type'        => 'switch', 
-                'title'       => __('Enable Float Buttons', 'master-template'),
-                'desc'        => __( 'This is the description field, again good for additional info.', 'master-template' ),
+                'title'       => __('Mostrar / Ocultar', 'master-template'),
+                'on'          => __('Mostrar', 'master-template'),
+                'off'          => __('Ocultar', 'master-template'),
                 'default'     => '1'
             ),
 
             array(
                 'id'       => 'style-alignment-float-buttons',
                 'type'     => 'select',
-                'title'    => __('Direction fixed', 'master-template'),
+                'title'    => __('Fijar en', 'master-template'),
                 'options'  => array(
-                    '1' => 'Center',
-                    '2' => 'Right',
-                    '3' => 'Left'
+                    '1' => 'Centro',
+                    '2' => 'Derecha',
+                    '3' => 'Izquierda'
                 ),
                 'default'  => '2',
                 'required'  => array('active-buttons', '=', '1' ),
@@ -792,10 +757,10 @@
             array(
                 'id'       => 'style-color-float-buttons',
                 'type'     => 'select',
-                'title'    => __('Select color style for your float buttons', 'master-template'),
+                'title'    => __('Estilo', 'master-template'),
                 'options'  => array(
                     '1' => 'Principal',
-                    '2' => 'Secondary'
+                    '2' => 'Secundario'
                 ),
                 'default'  => '1',
                 'required'  => array('active-buttons', '=', '1' ),
@@ -804,11 +769,11 @@
             array(
                 'id'       => 'size-float-buttons',
                 'type'     => 'select',
-                'title'    => __('Size float buttons', 'master-template'),
+                'title'    => __('Tamaño', 'master-template'),
                 'options'  => array(
                     '1' => 'Normal',
-                    '2' => 'Large',
-                    '3' => 'Small'
+                    '2' => 'Largo',
+                    '3' => 'Pequeño'
                 ),
                 'default'  => '1',
                 'required'  => array('active-buttons', '=', '1' ),
@@ -817,7 +782,7 @@
             array(
                 'id'          => 'social-float-buttons',
                 'type'        => 'section', 
-                'title'       => __('Social Buttons', 'master-template'),
+                'title'       => __('Botones redes', 'master-template'),
                 'indent'     => true,
                 'required'  => array('active-buttons', '=', '1' ),
             ),
@@ -882,7 +847,7 @@
             array(
                 'id'          => 'other-float-buttons',
                 'type'        => 'section', 
-                'title'       => __('Other Buttons', 'master-template'),
+                'title'       => __('Otros botones', 'master-template'),
                 'indent'     => true,
                 'required'  => array('active-buttons', '=', '1' ),
             ),
@@ -890,7 +855,7 @@
             array(
                 'id'          => 'float-top-button',
                 'type'        => 'switch', 
-                'title'       => __('Back to top', 'master-template'),
+                'title'       => __('Regresar arriba', 'master-template'),
                 'default'     => 1,
                 'required'  => array('active-buttons', '=', '1' ),
             ),
@@ -898,7 +863,7 @@
             array(
                 'id'          => 'float-custom-button',
                 'type'        => 'switch', 
-                'title'       => __('Custom Button', 'master-template'),
+                'title'       => __('Botón personalizado', 'master-template'),
                 'default'     => 2,
                 'required'  => array('active-buttons', '=', '1' ),
             ),
@@ -906,15 +871,15 @@
             array(
                 'id'          => 'float-link-custom-button',
                 'type'        => 'text', 
-                'title'       => __('Link Button', 'master-template'),
+                'title'       => __('Enlace', 'master-template'),
                 'default'     => '#',
                 'required'  => array('float-custom-button', '=', '1' ),
             ),
 
             array(
                 'id'        => 'icon-custom-button',
-                'title'     => __('Icon Button', 'master-template'),
-                'desc'      => __('Use the FontAwesome 5 class. For example "fas fa-at"'),
+                'title'     => __('Icono botón', 'master-template'),
+                'desc'      => __('Usa las clases de Fontawesome 5. Ejemplo: "fas fa-at"'),
                 'type'      => 'text',
                 'default'   => 'fas fa-at',
                 'required'  => array('float-custom-button', '=', '1' ),
@@ -922,10 +887,9 @@
 
             array(
                 'id'        => 'section-color-buttons',
-                'title'     => __('Color Buttons & Links', 'master-template'),
+                'title'     => __('Color botones y enlaces', 'master-template'),
                 'type'      => 'section',
                 'indent'    => true,
-                'subtitle'  => __('Options for buttons & links colors','master-template')
             ),
 
             
@@ -933,8 +897,7 @@
             array(
                 'id'          => 'section-principal-button',
                 'type'        => 'section', 
-                'title'       => __('Principal Button', 'master-template'),
-                'subtitle'       => __('Choose the options for Principal button', 'master-template'),
+                'title'       => __('Botón principal', 'master-template'),
                 'indent' => true,
                 
             ),
@@ -942,8 +905,7 @@
             array(
                 'id'          => 'button-principal-bg',
                 'type'        => 'color', 
-                'title'       => __('Background Color', 'master-template'),
-                'subtitle'    => __('Choose the color for background Principal Button', 'master-template'),
+                'title'       => __('Color fondo', 'master-template'),
                 'output'      => array(
                     'background-color' => '.principal-button, .filter-toggle.active a',
                 ),
@@ -953,8 +915,7 @@
             array(
                 'id'          => 'hover-button-cta-bg',
                 'type'        => 'color', 
-                'title'       => __('Background Color Hover', 'master-template'),
-                'subtitle'    => __('Choose the color for background Hover Principal Button', 'master-template'),
+                'title'       => __('Color fondo (Hover)', 'master-template'),
                 'output'      => array(
                     'background-color' => '.principal-button:hover',
                 ),
@@ -964,8 +925,7 @@
             array(
                 'id'          => 'opt-button-principal-color',
                 'type'        => 'link_color', 
-                'title'       => __('Text Color Button', 'master-template'),
-                'subtitle'    => __('Choose the color for   Principal Button', 'master-template'),
+                'title'       => __('Color texto botón', 'master-template'),
                 'output'      => '.principal-button',
                 'default'  => array(
                     'regular'  => '#fff',
@@ -978,19 +938,17 @@
             array(
                 'id'        => 'border-button',
                 'type'      => 'switch',
-                'title'     => esc_html__('Border button', 'master-template'),
+                'title'     => esc_html__('Borde', 'master-template'),
                 'default'   => 0,
-                'on'        => 'On',
-                'off'       => 'Off',
+                'on'        => 'Con borde',
+                'off'       => 'Sin borde',
             ),
 
             array(
                 'id'       => 'principal-button-border',
                 'type'     => 'border',
-                'title'    => __('Border button', 'master-template'),
-                'subtitle' => __('Only color validation can be done on this field type', 'master-template'),
+                'title'    => __('Opciones borde', 'master-template'),
                 'output'   => array('.principal-button'),
-                'desc'     => __('This is the description field, again good for additional info.', 'master-template'),
                 'default'  => array(
                     'border-color'  => '#1e73be', 
                     'border-style'  => 'solid', 
@@ -1005,10 +963,8 @@
             array(
                 'id'       => 'color-principal-button-border',
                 'type'     => 'color',
-                'title'    => __('Border hover button', 'master-template'),
-                'subtitle' => __('Only color validation can be done on this field type', 'master-template'),
+                'title'    => __('Color borde (Hover)', 'master-template'),
                 'output'   => array('.principal-button:hover'),
-                'desc'     => __('This is the description field, again good for additional info.', 'master-template'),
                 'default'  => '#1a5991',
                 'required' => array( 'border-button', '=', '1' ),
             ),
@@ -1018,8 +974,7 @@
             array(
                 'id'          => 'section-secondary-button',
                 'type'        => 'section', 
-                'title'       => __('Secondary Button', 'master-template'),
-                'subtitle'       => __('Choose the options for Secondary button', 'master-template'),
+                'title'       => __('Botón secundario', 'master-template'),
                 'indent' => true,
                 
             ),
@@ -1027,8 +982,7 @@
             array(
                 'id'          => 'button-secondary-bg',
                 'type'        => 'color', 
-                'title'       => __('Background Color', 'master-template'),
-                'subtitle'    => __('Choose the color for background Principal Button', 'master-template'),
+                'title'       => __('Color fondo', 'master-template'),
                 'output'      => array(
                     'background-color'   => '.secondary-button',
                 ),
@@ -1038,8 +992,7 @@
             array(
                 'id'          => 'hover-button-secondary-bg',
                 'type'        => 'color', 
-                'title'       => __('Background Color Hover', 'master-template'),
-                'subtitle'    => __('Choose the color for background Hover Principal Button', 'master-template'),
+                'title'       => __('Color fondo (Hover)', 'master-template'),
                 'output'      => array(
                     'background-color'   => '.secondary-button:hover',
                 ),
@@ -1049,8 +1002,7 @@
             array(
                 'id'          => 'opt-button-secondary-color',
                 'type'        => 'link_color', 
-                'title'       => __('Text Color Button', 'master-template'),
-                'subtitle'    => __('Choose the color for   Principal Button', 'master-template'),
+                'title'       => __('Color texto', 'master-template'),
                 'output'      => '.secondary-button',
                 'default'  => array(
                     'regular'  => '#fff',
@@ -1063,18 +1015,16 @@
             array(
                 'id'        => 'border-secondary-button',
                 'type'      => 'switch',
-                'title'     => esc_html__('Border button', 'master-template'),
+                'title'     => esc_html__('Borde', 'master-template'),
                 'default'   => 0,
-                'on'        => 'On',
-                'off'       => 'Off',
+                'on'        => 'Con borde',
+                'off'       => 'Sin borde',
             ),
 
             array(
                 'id'       => 'secondary-button-border',
                 'type'     => 'border',
-                'title'    => __('Border button', 'master-template'),
-                'subtitle' => __('Only color validation can be done on this field type', 'master-template'),
-                'desc'     => __('This is the description field, again good for additional info.', 'master-template'),
+                'title'    => __('Opciones borde', 'master-template'),
                 'output'   => '.secondary-button',
                 'default'  => array(
                     'border-color'  => '#739908', 
@@ -1090,9 +1040,7 @@
             array(
                 'id'       => 'color-secondary-button-border',
                 'type'     => 'color',
-                'title'    => __('Border hover button', 'master-template'),
-                'subtitle' => __('Only color validation can be done on this field type', 'master-template'),
-                'desc'     => __('This is the description field, again good for additional info.', 'master-template'),
+                'title'    => __('Color borde (Hover)', 'master-template'),
                 'output'   => array(
                     'border-color' => '.secondary-button:hover'
                 ),
@@ -1101,22 +1049,97 @@
             ),
 
 
+            //Aux Button
+            array(
+                'id'          => 'section-aux-button',
+                'type'        => 'section', 
+                'title'       => __('Botón auxiliar', 'master-template'),
+                'indent' => true,
+                
+            ),
+
+            array(
+                'id'          => 'button-aux-bg',
+                'type'        => 'color', 
+                'title'       => __('Color fondo', 'master-template'),
+                'output'      => array(
+                    'background-color'   => '.aux-button',
+                ),
+                'default'     => '#84B300',
+            ),
+
+            array(
+                'id'          => 'hover-button-aux-bg',
+                'type'        => 'color', 
+                'title'       => __('Color fondo (Hover)', 'master-template'),
+                'output'      => array(
+                    'background-color'   => '.aux-button:hover',
+                ),
+                'default'     => '#739908',
+            ),
+
+            array(
+                'id'          => 'opt-button-aux-color',
+                'type'        => 'link_color', 
+                'title'       => __('Color texto', 'master-template'),
+                'output'      => '.aux-button',
+                'default'  => array(
+                    'regular'  => '#fff',
+                    'hover'    => '#fff',
+                    'active'   => '#f2f2f2',
+                    'visited'  => '#f2f2f2',
+                ),
+            ),
+
+            array(
+                'id'        => 'border-aux-button',
+                'type'      => 'switch',
+                'title'     => esc_html__('Borde', 'master-template'),
+                'default'   => 0,
+                'on'        => 'Con borde',
+                'off'       => 'Sin borde',
+            ),
+
+            array(
+                'id'       => 'aux-button-border',
+                'type'     => 'border',
+                'title'    => __('Opciones borde', 'master-template'),
+                'output'   => '.aux-button',
+                'default'  => array(
+                    'border-color'  => '#739908', 
+                    'border-style'  => 'solid', 
+                    'border-top'    => '3px', 
+                    'border-right'  => '3px', 
+                    'border-bottom' => '3px', 
+                    'border-left'   => '3px'
+                ),
+                'required' => array( 'border-aux-button', '=', '1' ),
+            ),
+
+            array(
+                'id'       => 'color-aux-button-border',
+                'type'     => 'color',
+                'title'    => __('Color borde (Hover)', 'master-template'),
+                'output'   => array(
+                    'border-color' => '.aux-button:hover'
+                ),
+                'default'  => '#353535',
+                'required' => array( 'border-aux-button', '=', '1' ),
+            ),
+
+
             //Text Link
             array(
                 'id'       => 'section-text-link',
                 'type'     => 'section',
-                'title'    => __('Text Link', 'master-template'),
-                'subtitle' => __('Select options for your text link', 'master-template'),
-                'desc'     => __('This is the description field, again good for additional info.', 'master-template'),
+                'title'    => __('Enlaces', 'master-template'),
                 'indent'  => true,
             ),
 
             array(
                 'id'       => 'color-text-link',
                 'type'     => 'link_color',
-                'title'    => __('Options Link Color', 'master-template'),
-                'subtitle' => __('Only color validation can be done on this field type', 'master-template'),
-                'desc'     => __('This is the description field, again good for additional info.', 'master-template'),
+                'title'    => __('Color', 'master-template'),
                 'default'  => array(
                     'regular'  => '#1e73be',
                     'hover'    => '#1a5991',
