@@ -1,0 +1,15 @@
+.nav-languages .nav-link{
+    padding: .5rem;
+
+    img{
+        transition: all .3s;
+        width: 22px;
+        border-radius: 50%;
+    }
+}
+
+.nav-languages .nav-link img:hover, html[lang="es-ES"]  .item-es img, html[lang="en-US"] .item-en img{
+        border: 1px solid #fff;
+        transform: scale(1.2);
+   
+}

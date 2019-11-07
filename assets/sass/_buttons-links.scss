@@ -1,0 +1,147 @@
+.nav-link{
+    transition: all .3s;
+}
+
+//Button Master
+.button-master{
+    border: none;
+    padding: .5rem 2rem;
+    transition: all .3s;
+    text-transform: uppercase;
+    width: auto;
+    text-align: center;
+    display: inline-block;
+    -webkit-box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.34);
+    -moz-box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.34);
+    box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.34);
+    margin: .5em;
+
+    &:hover{
+        text-decoration: none;
+    }
+
+    &.button-rounded{
+        border-radius: 30px;
+    }
+
+    &.button-squared{
+        border-radius: 0px;
+    }
+
+    &.button-half-rounded{
+        border-radius: 5px;
+    }
+}
+
+
+//Float Buttons
+.float-buttons {
+    bottom: 1rem;
+    width: 50px;
+    z-index: 4000;
+    display: none;
+
+    &.animation-up{
+        .float-link{
+            transition: all .3s;
+            &:hover{
+                transform: translateY(-3px);
+            }
+        }
+    }
+
+    &.animation-opacity{
+        .float-link{
+            transition: all .3s;
+            &:hover{
+                opacity: .7;
+            }
+        }
+    }
+    
+    &.alignment-right{
+        right: 2em;
+    }
+
+    &.alignment-left{
+        left: 2em;
+    }
+
+    &.alignment-center{
+        left: 0;
+        bottom: .5em;
+        width: 100%;
+
+        .nav {
+            flex-direction: row !important;
+            justify-content: center;
+        }
+    }
+}
+
+.button-icon{
+    width: 45px;
+    height: 45px;
+    margin: .5rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .3s;
+    -webkit-box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.34);
+    -moz-box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.34);
+    box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.34);
+
+    &.link-rounded {
+        border-radius: 50%;
+    }
+    
+    &.link-half-rounded{
+        border-radius: 5px;
+    }
+    
+    &.link-squared{
+        border-radius: 0px;
+    }
+
+    &.large-button{
+        width: 55px;
+        height: 55px;
+    }
+    
+    &.small-button{
+        width: 30px;
+        height: 30px;
+    }
+    
+    &.normal-button{
+        width: 45px;
+        height: 45px;
+    }
+}
+
+//Button Toggle
+.button-toggle-custom{
+    border: none;
+    float: right;
+    cursor: pointer;
+    margin-right: 0;
+}
+
+
+//Text Link
+.text-link{
+    transition: all .3s;
+}
+
+.large-button{
+    font-size: 2em;
+}
+
+.small-button{
+    font-size: .8em;
+}
+
+.normal-button{
+    font-size: 1em;
+}

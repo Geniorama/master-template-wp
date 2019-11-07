@@ -1,0 +1,26 @@
+body{
+    width: 100%;
+    overflow-x: hidden;
+}
+
+#wp-calendar{
+    width: 100% !important;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+
+.breadcrumbs{
+    font-weight: 600;
+    color: #fff !important;
+
+    a{
+        color: #fff;
+    }
+
+    .item-breadcrumb{
+        text-transform: capitalize;
+    }
+}

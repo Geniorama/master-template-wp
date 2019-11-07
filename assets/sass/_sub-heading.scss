@@ -1,0 +1,26 @@
+.sub-heading-section{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+    padding: 3em;
+
+    .content-box{
+        position: relative;
+
+        .link-breadcrumb:hover{
+            text-decoration: none;
+        }
+    }
+}
+
+.opacity-layer:before{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba($color: #000000, $alpha: .5);
+}
